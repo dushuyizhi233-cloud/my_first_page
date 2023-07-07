@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>LayneZhang</title>
+    <style >
+        body {
+            background-color: #1a1a1a;
+            display:flex ;
+
+        }
+        #content img {
+            margin-bottom: 15px;
+        }
+        #content {
+            margin-top: 100px;
+            margin-bottom: auto;
+            margin-left: 100px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #gallery {
+            margin-top: 100px;
+            margin-left: 110px;
+            margin-right: 200px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .work.name {
+            display: flex;
+            justify-content: center;
+            font-family: SimHei;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(220,220,220);
+            text-decoration: none;
+            line-height: 1.5em;
+
+        }
+        .imgbox {
+            margin: 20px;
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .imgbox a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px; /* 可选：添加内边距以增加可读性 */
+            color: rgb(255,255,255); /* 可选：设置文字颜色 */
+            font-family: SimHei;
+            font-size: 25px; /* 可选：设置文字大小 */
+            letter-spacing: 5px;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div id="content">
+        <img src="./images/Layne%20LOGO.png" alt="Layne" width="100px">
+        <a class="work name" href="city.html">《城》</a>
+        <a class="work name" href="hometown.html">《村》</a>
+        <a class="work name" href="backagain.html">《归》</a>
+        <a class="work name">
+            <p>
+
+            </p>
+        </a>
+        <a class="work name">影片</a>
+        <a class="work name" href="about.html">关于</a>
+
+    </div>
+
+    <div id="gallery">
+        <div class="imgbox">
+            <a  href="city.html">城</a>
+            <img src="./images/city%20(1).jpg" alt="Layne" width="400px">
+        </div>
+        <div class="imgbox">
+            <a  href="hometown.html">村</a>
+            <img src="./images/hometown/乡-7.jpg" alt="Layne" width="400px">
+        </div>
+        <div class="imgbox">
+            <a  href="backagain.html">归</a>
+            <img src="./images/backagain/b%20(2).jpg" alt="Layne" width="400px">
+        </div>
+    </div>
+
+</body>
+</html>

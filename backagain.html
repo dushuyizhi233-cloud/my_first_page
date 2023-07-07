@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>LayneZhang</title>
+    <style >
+        body {
+            background-color: #1a1a1a;
+            display:flex ;
+
+        }
+        #content img {
+            margin-bottom: 15px;
+        }
+        #content {
+            margin-top: 100px;
+            margin-bottom: auto;
+            margin-left: 100px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #gallery {
+            margin-top: 100px;
+            margin-left: 110px;
+            margin-right: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .work.name {
+            display: flex;
+            justify-content: center;
+            font-family: SimHei;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(220,220,220);
+            text-decoration: none;
+            line-height: 1.5em;
+
+        }
+        .imgbox {
+            margin: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        #image {
+
+            height: 700px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #image.hidden {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div id="content">
+        <img src="./images/Layne%20LOGO.png" alt="Layne" width="100px">
+        <a class="work name" href="city.html">《城》</a>
+        <a class="work name" href="hometown.html">《村》</a>
+        <a class="work name" href="backagain.html">《归》</a>
+        <a class="work name">
+            <p>
+
+            </p>
+        </a>
+        <a class="work name">影片</a>
+        <a class="work name" href="about.html">关于</a>
+
+    </div>
+
+    <div id="gallery">
+        <div class="imgbox">
+            <img id="image" src="./images/backagain/b (1).jpg" alt="Image" width="100%">
+            <script>
+                // 图片路径数组
+                var images = [
+                        "./images/backagain/b (1).jpg",
+                        "./images/backagain/b (2).jpg",
+                        "./images/backagain/b (3).jpg",
+                        "./images/backagain/b (4).jpg",
+                        "./images/backagain/b (5).jpg",
+                        "./images/backagain/b (6).jpg",
+                        "./images/backagain/b (7).jpg",
+                        "./images/backagain/b (8).jpg",
+                        "./images/backagain/b (9).jpg",
+                        "./images/backagain/b (10).jpg",
+                        "./images/backagain/b (11).jpg",
+                        "./images/backagain/b (12).jpg",
+                        "./images/backagain/b (13).jpg",
+                        "./images/backagain/b (14).jpg",
+                        "./images/backagain/b (15).jpg",
+                        "./images/backagain/b (16).jpg",
+                        "./images/backagain/b (17).jpg",
+                        "./images/backagain/b (18).jpg",
+                        "./images/backagain/b (19).jpg",
+                        "./images/backagain/b (20).jpg",
+                        "./images/backagain/b (21).jpg",
+                        "./images/backagain/b (22).jpg",
+                        "./images/backagain/b (23).jpg",
+                        "./images/backagain/b (24).jpg",
+                        "./images/backagain/b (25).jpg",
+                        "./images/backagain/b (26).jpg",
+                        "./images/backagain/b (27).jpg",
+                        "./images/backagain/b (28).jpg",
+                        "./images/backagain/b (29).jpg",
+                        "./images/backagain/b (30).jpg",
+                        "./images/backagain/b (31).jpg",
+                        "./images/backagain/b (32).jpg",
+                        "./images/backagain/b (33).jpg",
+                ];
+
+                var currentIndex = 0;
+                var imageElement = document.getElementById("image");
+
+                function switchImage() {
+                    currentIndex++;
+                    if (currentIndex >= images.length) {
+                        currentIndex = 0;
+                    }
+
+                    imageElement.classList.add("hidden");
+
+                    var tempImage = new Image();
+                    tempImage.src = images[currentIndex];
+                    tempImage.addEventListener("load", function() {
+                        setTimeout(function () {
+                            imageElement.src = tempImage.src;
+                            imageElement.classList.remove("hidden");
+                        }, 500);
+                    });
+                }
+
+                setInterval(switchImage, 5000); // Automatically switch images every 3 seconds
+
+                imageElement.addEventListener("click", switchImage);
+            </script>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

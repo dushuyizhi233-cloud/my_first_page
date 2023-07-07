@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>LayneZhang</title>
+    <style >
+        body {
+            background-color: #1a1a1a;
+            display:flex ;
+
+        }
+        #content img {
+            margin-bottom: 15px;
+        }
+        #content {
+            margin-top: 100px;
+            margin-bottom: auto;
+            margin-left: 100px;
+            display: flex;
+            flex-direction: column;
+
+        }
+        #gallery {
+            margin-top: 100px;
+            margin-left: 110px;
+            margin-right: 200px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-end;
+            justify-content: flex-end;
+        }
+        .work.name {
+            display: flex;
+            justify-content: center;
+            font-family: SimHei;
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(220,220,220);
+            text-decoration: none;
+            line-height: 1.5em;
+
+        }
+        .imgbox {
+            margin: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        #image {
+
+            height: 700px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #image.hidden {
+            opacity: 0;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <div id="content">
+        <img src="./images/Layne%20LOGO.png" alt="Layne" width="100px">
+        <a class="work name" href="city.html">《城》</a>
+        <a class="work name" href="hometown.html">《村》</a>
+        <a class="work name" href="backagain.html">《归》</a>
+        <a class="work name">
+            <p>
+
+            </p>
+        </a>
+        <a class="work name">影片</a>
+        <a class="work name" href="about.html">关于</a>
+
+    </div>
+
+    <div id="gallery">
+        <div class="imgbox">
+            <img id="image" src="./images/hometown/乡-1.jpg" alt="Image" width="100%">
+            <script>
+                // 图片路径数组
+                var images = [
+                    "./images/hometown/乡-1.jpg",
+                    "./images/hometown/乡-2.jpg",
+                    "./images/hometown/乡-3.jpg",
+                    "./images/hometown/乡-4.jpg",
+                    "./images/hometown/乡-5.jpg",
+                    "./images/hometown/乡-6.jpg",
+                    "./images/hometown/乡-7.jpg",
+                    "./images/hometown/乡-8.jpg",
+                    "./images/hometown/乡-9.jpg",
+                    "./images/hometown/乡-10.jpg",
+                    "./images/hometown/乡-11.jpg",
+                    "./images/hometown/乡-12.jpg",
+                    "./images/hometown/乡-13.jpg",
+                    "./images/hometown/乡-14.jpg",
+                    "./images/hometown/乡-15.jpg",
+                    "./images/hometown/乡-16.jpg",
+                    "./images/hometown/乡-17.jpg",
+                    "./images/hometown/乡-18.jpg",
+                    "./images/hometown/乡-19.jpg",
+                    "./images/hometown/乡-20.jpg",
+                    "./images/hometown/乡-21.jpg",
+                    "./images/hometown/乡-22.jpg",
+                    "./images/hometown/乡-23.jpg",
+                    "./images/hometown/乡-24.jpg",
+                    "./images/hometown/乡-25.jpg",
+                    "./images/hometown/乡-26.jpg",
+                    "./images/hometown/乡-27.jpg",
+                    "./images/hometown/乡-28.jpg",
+                    "./images/hometown/乡-29.jpg",
+                    "./images/hometown/乡-30.jpg",
+                    "./images/hometown/乡-31.jpg",
+                    "./images/hometown/乡-32.jpg",
+                    "./images/hometown/乡-33.jpg",
+                    "./images/hometown/乡-34.jpg",
+                    "./images/hometown/乡-35.jpg",
+                    "./images/hometown/乡-36.jpg",
+                    "./images/hometown/乡-37.jpg",
+                    "./images/hometown/乡-38.jpg",
+                    "./images/hometown/乡-39.jpg",
+                    "./images/hometown/乡-40.jpg",
+                    "./images/hometown/乡-41.jpg",
+                    "./images/hometown/乡-42.jpg",
+                    "./images/hometown/乡-43.jpg",
+                    "./images/hometown/乡-44.jpg",
+                    "./images/hometown/乡-45.jpg",
+                    "./images/hometown/乡-46.jpg",
+                    "./images/hometown/乡-47.jpg",
+                    "./images/hometown/乡-48.jpg",
+                    "./images/hometown/乡-49.jpg",
+                    "./images/hometown/乡-50.jpg",
+                    "./images/hometown/乡-51.jpg",
+                    "./images/hometown/乡-52.jpg",
+                    "./images/hometown/乡-53.jpg",
+                    "./images/hometown/乡-54.jpg",
+                    "./images/hometown/乡-55.jpg",
+                    "./images/hometown/乡-56.jpg",
+                    "./images/hometown/乡-57.jpg",
+                    "./images/hometown/乡-58.jpg",
+                    "./images/hometown/乡-59.jpg",
+                    "./images/hometown/乡-60.jpg",
+                    "./images/hometown/乡-61.jpg",
+                    "./images/hometown/乡-62.jpg",
+                ];
+
+                var currentIndex = 0;
+                var imageElement = document.getElementById("image");
+
+                function switchImage() {
+                    currentIndex++;
+                    if (currentIndex >= images.length) {
+                        currentIndex = 0;
+                    }
+
+                    imageElement.classList.add("hidden");
+
+                    var tempImage = new Image();
+                    tempImage.src = images[currentIndex];
+                    tempImage.addEventListener("load", function() {
+                        setTimeout(function () {
+                            imageElement.src = tempImage.src;
+                            imageElement.classList.remove("hidden");
+                        }, 500);
+                    });
+                }
+
+                setInterval(switchImage, 5000); // Automatically switch images every 3 seconds
+
+                imageElement.addEventListener("click", switchImage);
+            </script>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
